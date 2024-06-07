@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -12,15 +13,29 @@ namespace PWCGen
         static void Main(string[] args)
         {
 
-            // Menu 
+            bool exit = false;
+            while (!exit)
+            {
+                
+                DisplayMenu();
+                Console.WriteLine();
+            }
+
+        }
+        // Wyświetl Menu
+        static void DisplayMenu()
+        {
+            // MainMenu 
+            Console.WriteLine("================================");
             Console.WriteLine("PWCGen 1.0");
             Console.WriteLine("Twój konsolowy generator haseł");
+            Console.WriteLine("================================");
             Console.WriteLine();
 
             Console.WriteLine("1. Hasło 15 znakowe");
             Console.WriteLine("2. Hasło 8 znakowe (zawiera znaki specjalne)");
             Console.WriteLine("3. Hasło 8 znakowe z pominięciem znaku '@' (STAFFWARE)");
-            
+
             string userChoice = Console.ReadLine();
 
             // Wybór: Hasło 15 znakowe bez znaków specjalnych
@@ -75,6 +90,14 @@ namespace PWCGen
             }
 
         }
+        static void HighlightText(string text, ConsoleColor backgroundColor, ConsoleColor foregroundColor)
+        {
+            Console.BackgroundColor = backgroundColor;
+            Console.ForegroundColor = foregroundColor;
+            Console.Write(text);
+            Console.ResetColor();
+        }
+        
         // Metoda generująca hasło
         private static string GeneratePassword(int length, string chars, string specialChars = "")
         {
@@ -99,6 +122,6 @@ namespace PWCGen
             // Konwersja tablicy znaków na string i zwrócenie hasła
             return new string(password);
         }
-      
+
     }
 }
