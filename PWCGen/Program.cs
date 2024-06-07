@@ -16,7 +16,7 @@ namespace PWCGen
             bool exit = false;
             while (!exit)
             {
-                
+
                 DisplayMenu();
                 Console.WriteLine();
             }
@@ -53,6 +53,8 @@ namespace PWCGen
 
                 // Wyświetlenie hasła
                 Console.WriteLine("Generated Password: " + password);
+
+
             }
             // Wybór: Hasło 8 znakowe ze znakami specjalnymi
             if (userChoice == "2")
@@ -88,16 +90,12 @@ namespace PWCGen
                 // Wyświetlenie hasła
                 Console.WriteLine("Generated Password: " + password);
             }
+            else
+            {
+                Console.WriteLine("Musisz wybrać opcje od 1-3");
+            }
+        }
 
-        }
-        static void HighlightText(string text, ConsoleColor backgroundColor, ConsoleColor foregroundColor)
-        {
-            Console.BackgroundColor = backgroundColor;
-            Console.ForegroundColor = foregroundColor;
-            Console.Write(text);
-            Console.ResetColor();
-        }
-        
         // Metoda generująca hasło
         private static string GeneratePassword(int length, string chars, string specialChars = "")
         {
@@ -121,7 +119,7 @@ namespace PWCGen
 
             // Konwersja tablicy znaków na string i zwrócenie hasła
             return new string(password);
-        }
-
+        }     
+ 
     }
 }
