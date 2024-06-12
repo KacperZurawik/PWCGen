@@ -19,14 +19,14 @@ namespace PWCGen
         static void DisplayMenu()
         {
             // MainMenu 
-            Console.WriteLine("================================");
-            Console.WriteLine("PWCGen 1.0");
-            Console.WriteLine("Konsolowy generator haseł");
-            Console.WriteLine("================================");
+            Console.WriteLine("-------------------------------------");
+            Console.WriteLine("PWCGen 1.0 PL");
+            Console.WriteLine("PassWord Console Generator");
+            Console.WriteLine("-------------------------------------");
             Console.WriteLine();  // New line!
 
-            Console.WriteLine("1. Hasło 15 znakowe");
-            Console.WriteLine("2. Hasło 8 znakowe (zawiera znaki specjalne)");
+            Console.WriteLine("1. Hasło 15 znakowe (bez znaków specjalnych)");
+            Console.WriteLine("2. Hasło 8 znakowe");
             Console.WriteLine("3. Hasło 8 znakowe z pominięciem znaku '@' (STAFFWARE)");
 
             string userChoice = Console.ReadLine();
@@ -57,7 +57,7 @@ namespace PWCGen
                 Console.ForegroundColor = ConsoleColor.White;
 
                 // Shows error message
-                Console.WriteLine(" " + "Musiz wybrać opcje od 1-3!!!" + " ");
+                Console.WriteLine(" " + "Musisz wybrać opcje od 1-3!!!" + " ");
 
                 // Restores the default console background color
                 Console.ResetColor();
@@ -97,10 +97,10 @@ namespace PWCGen
             // Generates next password characters
             for (int i = 0; i < length; i++)
             {
-                int index = random.Next(chars.Length);
+                int index = random.Next(allChars.Length);
 
                 // Adds a randomly selected character to the password
-                password[i] = chars[index];
+                password[i] = allChars[index];
 
             }
 
