@@ -1,4 +1,8 @@
-![PCWgen PL GIF](https://github.com/KacperZurawik/PWCGen/assets/54482370/11c9b8b0-c798-47db-a866-0d14fc0eecb2)
+https://github.com/KacperZurawik/PWCGen/assets/54482370/4ea0f72a-92f5-4530-8a7c-ed9f5b483347
+
+# PWCGen 1.0
+## Konsolowy generator haseł
+
 
 
 Download:
